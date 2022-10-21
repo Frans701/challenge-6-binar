@@ -31,11 +31,11 @@ const Login = ({ setToken }) => {
         if (result.data.token) {
           localStorage.setItem("token", result.data.token);
           setToken(result.data.token);
+          redirect("/");
         }
       } catch (error) {
         alert(error.response.data.message);
       }
-      redirect("/");
     }
   };
 
